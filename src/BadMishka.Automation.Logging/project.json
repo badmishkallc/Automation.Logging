@@ -1,0 +1,25 @@
+﻿{
+  "version": "0.1.0-*",
+  "description": "BadMishka.Automation.Logging Class Library",
+  "authors": [
+    "Michael Herndon"
+  ],
+  "tags": [
+    ""
+  ],
+  "projectUrl": "",
+  "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
+  "frameworks": {
+    "net46": {
+    }
+  },
+  "runtimes": { "win": { } },
+  "dependencies": {
+    "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
+    "Serilog.Extensions.Logging": "1.0.0-rc1-final-10086",
+    "Serilog.Sinks.RollingFile": "2.0.0-beta-486",
+    "Serilog.Sinks.File": "2.0.0-beta-486",
+    "System.Management.Automation": "6.1.7601.17515"
+  }
+}
