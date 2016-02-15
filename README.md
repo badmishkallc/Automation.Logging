@@ -19,8 +19,8 @@ PS C:\Users\user> Write-Log -Level "Debug" -Message "Debug Message"
  
 ## Guidelines
 
- - [Code of Conduct](code-of-conduct.md)
- - [Contributing](contributing.md)
+ - [Code of Conduct](CODE-OF-CONDUCT.md)
+ - [Contributing](CONTRIBUTING.md)
 
 ## License 
 
