@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddWriteLogFile.cs" />
-    <Compile Include="AddWriteLogProvider.cs" />
-    <Compile Include="Get-WriteLogLevel.cs" />
+    <Compile Include="AddWriteLogFileCmdlet.cs" />
+    <Compile Include="AddWriteLogProviderCmdlet.cs" />
+    <Compile Include="Get-WriteLogLevelCmdlet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResumeWriteLogCmdlet.cs" />
-    <Compile Include="Set-WriteLogLevel.cs" />
+    <Compile Include="Set-WriteLogLevelCmdlet.cs" />
     <Compile Include="SuspendWriteLogCmdlet.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="WriteLogCmdlet.cs" />
@@ -61,8 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BadMishka.Automation.Logging.xproj" />
+    <Content Include="Posh-WriteLog.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="project.json" />
-    <None Include="project.lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="BadMishka.Automation.Logging.xproj.user" />

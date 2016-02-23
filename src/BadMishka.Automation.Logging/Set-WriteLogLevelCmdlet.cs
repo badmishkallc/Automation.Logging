@@ -10,7 +10,7 @@ namespace BadMishka.Automation.Logging
 {
     [Cmdlet("Set", "WriteLogLevel")]
     [CLSCompliant(false)]
-    public class SetWriteLogLevel : PSCmdlet
+    public class SetWriteLogLevelCmdlet : PSCmdlet
     {
         [Parameter(Position = 0, Mandatory = true)]
         public LogLevel Level { get; set; }

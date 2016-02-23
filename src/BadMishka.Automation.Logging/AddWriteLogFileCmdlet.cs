@@ -11,10 +11,10 @@ namespace BadMishka.Automation.Logging
 {
     [Cmdlet("Add", "WriteLogFile")]
     [CLSCompliant(false)]
-    public class AddWriteLogFile : PSCmdlet
+    public class AddWriteLogFileCmdlet : PSCmdlet
     {
 
-        public AddWriteLogFile()
+        public AddWriteLogFileCmdlet()
         {
             this.Template = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}";
         }
@@ -52,6 +52,8 @@ namespace BadMishka.Automation.Logging
                     .MinimumLevel.ControlledBy(Util.Switch)
                     .WriteTo
                     .RollingFile(this.File, Util.Switch.MinimumLevel, Template)
+                    .WriteTo
+                    .ColoredConsole(Util.Switch.MinimumLevel)
                     .CreateLogger());
             } else
             {
@@ -59,6 +61,8 @@ namespace BadMishka.Automation.Logging
                     .MinimumLevel.ControlledBy(Util.Switch)
                     .WriteTo
                     .File(this.File, Util.Switch.MinimumLevel, Template)
+                    .WriteTo
+                    .ColoredConsole(Util.Switch.MinimumLevel)
                     .CreateLogger());
             }
 

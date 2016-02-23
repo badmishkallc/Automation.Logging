@@ -9,12 +9,12 @@ Sadly, Asp.Net 5x and Serilog currently
 
 ## Quickstart
 ```powershell
-PS C:\Users\user> Import-Module c:\Users\path\to\BadMishka.Automation.Logging.dll
+PS C:\Users\user> Install-Module Posh-WriteLog
 PS C:\Users\user> Set-WriteLogLevel "Debug"
-PS C:\Users\user> Add-WriteLogFile -File "awesomelog-{Date}.txt" -Rolling
-PS C:\Users\user> Add-WriteLogProvider "console"
+PS C:\Users\user> Add-WriteLogFile -File "c:\users\user\awesomelog-{Date}.txt" -Rolling
 PS C:\Users\user> Write-LogDebug "Message"
-PS C:\Users\user> Write-Log -Level "Debug" -Message "Debug Message"
+PS C:\Users\user> Write-Log "Debug Message"
+PS C:\Users\user> Write-Log -Level Debug "Debug Message"
 ```
  
 ## Guidelines

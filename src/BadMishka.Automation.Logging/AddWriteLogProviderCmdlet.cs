@@ -12,7 +12,7 @@ namespace BadMishka.Automation.Logging
     
     [Cmdlet("Add", "WriteLogProvider")]
     [CLSCompliant(false)]
-    public class AddWriteLogProvider : PSCmdlet
+    public class AddWriteLogProviderCmdlet : PSCmdlet
     {
 
         [Parameter(Mandatory = true, Position = 0)]

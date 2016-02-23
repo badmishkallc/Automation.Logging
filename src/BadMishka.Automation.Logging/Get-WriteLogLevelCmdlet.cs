@@ -9,7 +9,7 @@ namespace BadMishka.Automation.Logging
 {
     [Cmdlet("Get", "WriteLogLevel")]
     [CLSCompliant(false)]
-    public class GetWriteLogLevel : PSCmdlet
+    public class GetWriteLogLevelCmdlet : PSCmdlet
     {
 
         protected override void ProcessRecord()

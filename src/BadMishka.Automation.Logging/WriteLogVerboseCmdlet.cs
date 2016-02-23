@@ -13,7 +13,10 @@ namespace BadMishka.Automation.Logging
 
         public WriteLogVerboseCmdlet()
         {
-            this.Level = Microsoft.Extensions.Logging.LogLevel.Verbose;
+            if (Util.IsInverted)
+                this.Level = Microsoft.Extensions.Logging.LogLevel.Debug;
+            else
+                this.Level = Microsoft.Extensions.Logging.LogLevel.Verbose;
         }
     }
 }

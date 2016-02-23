@@ -1,13 +1,14 @@
 ﻿
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
+using Serilog;
 using System;
 
 namespace BadMishka.Automation.Logging
 {
     internal sealed class Util
     {
-        private static ILogger s_rootLogger;
+        private static Microsoft.Extensions.Logging.ILogger s_rootLogger;
         private static ILoggerFactory s_factory;
         private static bool s_paused = false;
         private static bool s_serilog = false;
@@ -23,7 +24,15 @@ namespace BadMishka.Automation.Logging
         static Util()
         {
             Level = LogLevel.Debug;
+            IsInverted = true;
+            AddSerilog(new Serilog.LoggerConfiguration()
+                    .MinimumLevel.ControlledBy(Util.Switch)
+                    .WriteTo
+                    .ColoredConsole(Util.Switch.MinimumLevel)
+                    .CreateLogger());
         }
+
+        public static bool IsInverted { get; set; }
 
         public static Serilog.Core.LoggingLevelSwitch Switch { get { return s_switch; } }
 
@@ -101,7 +110,7 @@ namespace BadMishka.Automation.Logging
             }
         }
 
-        public static ILogger GetLogger(string name = "PowerShell")
+        public static Microsoft.Extensions.Logging.ILogger GetLogger(string name = "PowerShell")
         {
             lock(s_syncLock)
             {
