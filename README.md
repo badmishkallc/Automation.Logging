@@ -10,12 +10,25 @@ Sadly, Asp.Net 5x and Serilog currently
 ## Quickstart
 ```powershell
 PS C:\Users\user> Install-Module Posh-WriteLog
-PS C:\Users\user> Set-WriteLogLevel "Debug"
-PS C:\Users\user> Add-WriteLogFile -File "c:\users\user\awesomelog-{Date}.txt" -Rolling
+PS C:\Users\user> Add-WriteLogConsoleEmitter 
+PS C:\Users\user> Add-WriteLogFile -File "$env:USERPROFILE\Desktop\awesomelog-{Date}.txt" -Rolling
 PS C:\Users\user> Write-LogDebug "Message"
-PS C:\Users\user> Write-Log "Debug Message"
-PS C:\Users\user> Write-Log -Level Debug "Debug Message"
+PS C:\Users\user> Write-Log "Info Message"
+PS C:\Users\user> Write-Log -Level Warning "Explicit Warning Message"
 ```
+
+# Why?
+
+Sometimes a log file is needed for automation scripts that does not trap the 
+output from Write-Host, Verbose, or other internal objects. 
+
+I've written log functions a few times and did not see a module that quite 
+fit the nitch of using existing logging libraries or writing in hooks 
+to enable switching between logging frameworks later. 
+
+
+
+
  
 ## Guidelines
 

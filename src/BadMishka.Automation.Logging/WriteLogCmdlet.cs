@@ -19,8 +19,15 @@ namespace BadMishka.Automation.Logging
         }
 
         [Parameter()]
-        public new LogLevel Level { get; set; }
+        public new LogLevel Level
+        {
+            get { return base.Level; }
+            set { base.Level = value; }
+        }
 
-    
+        protected override void ProcessRecord()
+        {
+            base.ProcessRecord();
+        }
     }
 }

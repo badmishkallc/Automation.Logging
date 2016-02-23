@@ -9,7 +9,7 @@ using Serilog.Sinks.RollingFile;
 
 namespace BadMishka.Automation.Logging
 {
-    
+    /*
     [Cmdlet("Add", "WriteLogProvider")]
     [CLSCompliant(false)]
     public class AddWriteLogProviderCmdlet : PSCmdlet
@@ -43,5 +43,5 @@ namespace BadMishka.Automation.Logging
      
             base.ProcessRecord();
         }
-    }
+    } */
 }

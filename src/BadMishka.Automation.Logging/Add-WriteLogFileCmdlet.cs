@@ -52,8 +52,6 @@ namespace BadMishka.Automation.Logging
                     .MinimumLevel.ControlledBy(Util.Switch)
                     .WriteTo
                     .RollingFile(this.File, Util.Switch.MinimumLevel, Template)
-                    .WriteTo
-                    .ColoredConsole(Util.Switch.MinimumLevel)
                     .CreateLogger());
             } else
             {
@@ -61,8 +59,6 @@ namespace BadMishka.Automation.Logging
                     .MinimumLevel.ControlledBy(Util.Switch)
                     .WriteTo
                     .File(this.File, Util.Switch.MinimumLevel, Template)
-                    .WriteTo
-                    .ColoredConsole(Util.Switch.MinimumLevel)
                     .CreateLogger());
             }
 

@@ -20,13 +20,25 @@
 	Description = "Posh-WriteLog imports a Write-Log cmdlet for writing to rolling log files."
     CompanyName = "Bad Mishka LLC"
     Copyright = "(C) Bad Mishka LLC. All rights reserved."
-    ModuleVersion = "0.1.4"
+    ModuleVersion = "0.1.5"
     PowerShellVersion = "3.0"
     ClrVersion = "4.0"
     RootModule = "BadMishka.Automation.Logging.dll"
 	PrivateData = @{
 		PSData = @{
-			ReleaseNotes = "https://raw.githubusercontent.com/badmishkallc/Automation.Logging/master/RELEASE-NOTES.md"
+			ReleaseNotes = "
+Quick Usage Sample
+
+PS C:\Users\user> Install-Module Posh-WriteLog
+PS C:\Users\user> Add-WriteLogConsoleEmitter 
+PS C:\Users\user> Add-WriteLogFile -File `"`$env:USERPROFILE\Desktop\awesomelog-{Date}.txt`" -Rolling
+PS C:\Users\user> Write-LogDebug `"Message`"
+PS C:\Users\user> Write-Log `"Info Message`"
+PS C:\Users\user> Write-Log -Level Warning `"Explicit Warning Message`"
+
+0.1.5
+  - streamlined the api
+  - fixed a Write-Log that kept the log level at None.  			"
 			ProjectUri = "https://github.com/badmishkallc/Automation.Logging"
 			LicenseURI = "https://raw.githubusercontent.com/badmishkallc/Automation.Logging/master/LICENSE"
 			IconUri = "https://s3.amazonaws.com/badbadmishka.com/public/bad-posh.png"
@@ -35,7 +47,7 @@
 	}
     CmdletsToExport = @(
         'Add-WriteLogFile',
-        'Add-WriteLogProvider',
+		'Add-WriteLogConsoleEmitter',
         'Get-WriteLogLevel', 
         'Resume-WriteLog',
         'Set-WriteLogLevel',

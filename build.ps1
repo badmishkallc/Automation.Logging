@@ -1,7 +1,5 @@
 ﻿$hd = Split-Path $MyInvocation.MyCommand.Path; 
-
 $root = "$hd\src\BadMishka.Automation.Logging"
-
 $path = "$root\BadMishka.Automation.Logging.csproj"
 
 if((Test-Path "$root\bin\Release")) {
@@ -13,7 +11,7 @@ if((Test-Path "$hd\.build\Posh-WriteLog")) {
 }
 
 $dev = "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\devenv.exe"
-& $dev "$hd/BadMishka.Automation.Logging.sln" /build Release /project "src/BadMishka.Automation.Logging/BadMishka.Automation.Logging.csproj" /projectconfig Release
+& $dev "$hd\BadMishka.Automation.Logging.sln" /build Release /project "src\BadMishka.Automation.Logging\BadMishka.Automation.Logging.csproj" /projectconfig Release
 
 while($true) {
     sleep -Seconds 1

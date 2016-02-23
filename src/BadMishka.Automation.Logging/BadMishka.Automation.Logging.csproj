@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddWriteLogFileCmdlet.cs" />
+    <Compile Include="Add-WriteLogConsoleEmitterCmdlet.cs" />
+    <Compile Include="Add-WriteLogFileCmdlet.cs" />
     <Compile Include="AddWriteLogProviderCmdlet.cs" />
     <Compile Include="Get-WriteLogLevelCmdlet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
